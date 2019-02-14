@@ -12,7 +12,7 @@ exit_icon.resize = true
 exit_icon.forced_width = 40
 exit_icon.forced_height = 40
 local exit_text = wibox.widget.textbox("Exit")
-exit_text.font = "sans 13"
+exit_text.font = "sans 11"
 
 local exit = wibox.widget{
   exit_icon,
@@ -28,7 +28,7 @@ exit:buttons(gears.table.join(
 
 local weather_widget = require("noodle.weather")
 local weather_widget_text = weather_widget:get_all_children()[2]
-weather_widget_text.font = "sans 13"
+weather_widget_text.font = "sans 11"
 -- Dummy weather_widget for testing
 -- (avoid making requests with every awesome restart)
 -- local weather_widget = wibox.widget.textbox("[icon] clear sky 8oC")
@@ -83,7 +83,6 @@ local battery = wibox.widget{
   expand = "none",
   layout = wibox.layout.align.horizontal
 }
-
 local cpu_icon = wibox.widget.imagebox(beautiful.cpu_icon)
 cpu_icon.resize = true
 cpu_icon.forced_width = 40
@@ -211,13 +210,13 @@ local playerctl_buttons = wibox.widget {
 local time = wibox.widget.textclock("%H %M")
 time.align = "center"
 time.valign = "center"
-time.font = "sans 50"
+time.font = "sans 40"
 
 local date = wibox.widget.textclock("%A, %B %d")
 -- local date = wibox.widget.textclock("%A, %B %d, %Y")
 date.align = "center"
 date.valign = "center"
-date.font = "sans medium 15"
+date.font = "sans medium 12"
 
 local fancy_date = wibox.widget.textclock("%-j days around the sun")
 fancy_date.align = "center"
@@ -228,7 +227,7 @@ local mpd_song = require("noodle.mpd_song")
 local mpd_widget_children = mpd_song:get_all_children()
 local mpd_title = mpd_widget_children[1]
 local mpd_artist = mpd_widget_children[2]
-mpd_title.font = "sans medium 13"
+mpd_title.font = "sans medium 11"
 mpd_artist.font = "sans 11"
 -- Set forced height in order to limit the widgets to one line.
 -- Might need to be adjusted depending on the font.
@@ -251,7 +250,7 @@ mpd_song:buttons(gears.table.join(
 ))
 
 local disk_space = require("noodle.disk")
-disk_space.font = "sans 13"
+disk_space.font = "sans 11"
 local disk_icon = wibox.widget.imagebox(beautiful.files_icon)
 disk_icon.resize = true
 disk_icon.forced_width = 40
@@ -282,7 +281,7 @@ search_icon.resize = true
 search_icon.forced_width = 40
 search_icon.forced_height = 40
 local search_text = wibox.widget.textbox("Search")
-search_text.font = "sans 13"
+search_text.font = "sans 11"
 
 local search = wibox.widget{
   search_icon,

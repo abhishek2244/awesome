@@ -50,7 +50,6 @@ require("awful.hotkeys_popup.keys")
 -- As a result when awesome restarts, they keep running in background, along with the new ones that are created after the restart.
 -- This script cleans up the old processes.
 awful.spawn.with_shell("~/.config/awesome/awesome-cleanup.sh")
-
 -- {{{ Initialize stuff
 local helpers = require("helpers")
 local bars = require("bars")
@@ -89,12 +88,12 @@ end
 -- }}}
 
 -- {{{ Variable definitions
-terminal = "termite"
+terminal = "lxterminal"
 tmux = terminal .. " -e tmux new "
 editor = "vim"
 --editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor .. " "
-filemanager = "nemo"
+filemanager = "nautilus"
 
 -- Get screen geometry
 screen_width = awful.screen.focused().geometry.width
@@ -196,22 +195,22 @@ mymainmenu = awful.menu({ items = {
                                       beautiful.mail_icon },
                                     { "editor", "em", beautiful.editor_icon },
                                     { "files", filemanager, beautiful.files_icon },
-                                    { "discord",
-                                      function ()
-                                        local matcher = function (c)
-                                          return awful.rules.match(c, {class = 'discord'})
-                                        end
-                                        awful.client.run_or_raise("discord", matcher)
-                                      end,
-                                      beautiful.discord_icon },
-                                    { "gimp",
-                                      function ()
-                                        local matcher = function (c)
-                                          return awful.rules.match(c, {class = 'Gimp'})
-                                        end
-                                        awful.client.run_or_raise("gimp", matcher)
-                                      end,
-                                      beautiful.gimp_icon },
+--                                     { "discord",
+--                                       function ()
+--                                         local matcher = function (c)
+--                                           return awful.rules.match(c, {class = 'discord'})
+--                                         end
+--                                         awful.client.run_or_raise("discord", matcher)
+--                                       end,
+--                                       beautiful.discord_icon },
+--                                     { "gimp",
+--                                       function ()
+--                                         local matcher = function (c)
+--                                           return awful.rules.match(c, {class = 'Gimp'})
+--                                         end
+--                                         awful.client.run_or_raise("gimp", matcher)
+--                                       end,
+--                                       beautiful.gimp_icon },
                                     { "appearance", "lxappearance", beautiful.appearance_icon },
                                     { "volume",
                                       function ()
@@ -221,22 +220,22 @@ mymainmenu = awful.menu({ items = {
                                         awful.client.run_or_raise("pavucontrol", matcher)
                                       end,
                                       beautiful.volume_icon },
-                                    { "lutris",
-                                      function ()
-                                        local matcher = function (c)
-                                          return awful.rules.match(c, {class = 'Lutris'})
-                                        end
-                                        awful.client.run_or_raise("lutris", matcher)
-                                      end,
-                                      beautiful.lutris_icon },
-                                    { "steam",
-                                      function ()
-                                        local matcher = function (c)
-                                          return awful.rules.match(c, {class = 'Steam'})
-                                        end
-                                        awful.client.run_or_raise("steam", matcher)
-                                      end,
-                                      beautiful.steam_icon },
+--                                     { "lutris",
+--                                       function ()
+--                                         local matcher = function (c)
+--                                           return awful.rules.match(c, {class = 'Lutris'})
+--                                         end
+--                                         awful.client.run_or_raise("lutris", matcher)
+--                                       end,
+--                                       beautiful.lutris_icon },
+--                                     { "steam",
+--                                       function ()
+--                                         local matcher = function (c)
+--                                           return awful.rules.match(c, {class = 'Steam'})
+--                                         end
+--                                         awful.client.run_or_raise("steam", matcher)
+--                                       end,
+--                                       beautiful.steam_icon },
                                     { "terminal", terminal, beautiful.terminal_icon },
                                   }
                         })

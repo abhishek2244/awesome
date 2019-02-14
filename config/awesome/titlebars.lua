@@ -105,10 +105,10 @@ client.connect_signal("request::titlebars", function(c)
                 layout  = titlebar_item_layout
             },
             { -- Middle
-                --{ -- Title
-                    --align  = beautiful.titlebar_title_align,
-                    --widget = title_widget
-                --},
+                { -- Title
+                    align  = beautiful.titlebar_title_align,
+                    widget = title_widget
+                },
                 title_widget,
                 buttons = buttons,
                 layout  = wibox.layout.flex.horizontal

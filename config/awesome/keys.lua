@@ -480,6 +480,11 @@ keys.globalkeys = gears.table.join(
       {description = "send CONT signal to all firefox processes", group = "other"}),
     awful.key({ superkey }, "F6", function() awful.spawn.with_shell("i3lock") end,
       {description = "lock screen", group = "other"}),
+    awful.key({ superkey, shiftkey }, "Tab", function() awful.spawn.with_shell("skippy-xd") end, 
+      {description = "Tile All Workspaces", group = "launcher"}),
+    awful.key({ superkey, shiftkey }, "s", function() awful.spawn.with_shell("slack") end, 
+      {description = "Open Slack", group = "launcher"}),
+
     awful.key({ superkey }, "q", function()
         if client.focus ~= nil and client.focus.class == "scratchpad" then
             client.focus.minimized = true

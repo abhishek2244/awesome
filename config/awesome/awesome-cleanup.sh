@@ -11,3 +11,9 @@
 ps aux | grep "mpc idleloop player" | grep -v grep | awk '{print $2}' | xargs kill
 # Volume widget
 ps aux | grep "pactl subscribe" | grep -v grep | awk '{print $2}' | xargs kill
+slack & disown
+copyq & disown
+firefox & disown
+
+cd /var/www/html/gateway && nodemon server.js
+cd /var/www/html/gateway-chinmay && nodemon server.js
